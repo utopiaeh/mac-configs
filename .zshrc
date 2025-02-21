@@ -81,9 +81,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    pnpm
     yarn
-    zsh-autosuggestions
     git
     cp
     autojump
@@ -91,7 +89,10 @@ plugins=(
     extract
     docker-compose
     hasura
+    zsh-autosuggestions
     zsh-syntax-highlighting
+    fast-syntax-highlighting
+    zsh-autocomplete
   )
 
 source $ZSH/oh-my-zsh.sh
