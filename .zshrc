@@ -1,6 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
+# typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -78,23 +81,17 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    pnpm
+    yarn
+    zsh-autosuggestions
     git
     cp
-    copyfile
-    copybuffer
-    copypath
     autojump
-    ssh
     ssh-agent
     extract
-    encode64
     docker-compose
     hasura
-    fzf
-    pnpm
-    fzf-zsh-plugin
     zsh-syntax-highlighting
-    zsh-autosuggestions
   )
 
 source $ZSH/oh-my-zsh.sh
@@ -132,3 +129,32 @@ source $ZSH/oh-my-zsh.sh
 
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
+
+# pnpm
+export PNPM_HOME="/Users/utopiaeh/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+#openjdk
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+
+# shell completions
+if command -v ngrok &>/dev/null; then
+  eval "$(ngrok completion)"
+fi
+
+
+# Created by `pipx` on 2024-11-04 12:13:24
+export PATH="$PATH:/Users/utopiaeh/.local/bin"
+
+# Disable hasura-cli update check to avoid slow startup
+export HASURA_GRAPHQL_ENABLE_UPDATE_CHECK=false
+export PATH="/opt/homebrew/bin:$PATH"
+export GOPATH="$HOME/go"
+export GOROOT="/opt/homebrew/opt/go/libexec"
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"

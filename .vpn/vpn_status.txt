@@ -1,1 +1,0 @@
-./connect_vpn.sh: line 40: openconnect: command not found

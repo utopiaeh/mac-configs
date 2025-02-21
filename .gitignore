@@ -1,0 +1,8 @@
+#Ignore all files
+*
+
+#Except this file
+!.gitignore
+!README.md
+!.zshrc
+!.zprofile
