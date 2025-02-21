@@ -132,7 +132,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 # pnpm
-export PNPM_HOME="/Users/utopiaeh/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -150,7 +150,7 @@ fi
 
 
 # Created by `pipx` on 2024-11-04 12:13:24
-export PATH="$PATH:/Users/utopiaeh/.local/bin"
+export PATH="$PATH:/$HOME/.local/bin"
 
 # Disable hasura-cli update check to avoid slow startup
 export HASURA_GRAPHQL_ENABLE_UPDATE_CHECK=false
