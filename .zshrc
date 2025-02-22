@@ -120,8 +120,18 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="mate ~/.zshrc"
+alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias zsource='source ~/.zshrc'
+
+alias cl='clear'
+alias lg='lazygit'
+
+# Typescript check by ts version in project
+alias tscl='npx tsc'
+
+alias kcp='cd ~/Developer/scripts && sh kill_ports.sh'
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
