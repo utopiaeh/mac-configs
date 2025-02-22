@@ -150,8 +150,7 @@ esac
 # pnpm end
 
 #openjdk
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+
 
 # shell completions
 if command -v ngrok &>/dev/null; then
@@ -169,3 +168,8 @@ export GOPATH="$HOME/go"
 export GOROOT="/opt/homebrew/opt/go/libexec"
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+# OpenJDK
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
